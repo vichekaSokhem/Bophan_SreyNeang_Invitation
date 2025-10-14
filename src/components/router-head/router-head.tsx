@@ -18,8 +18,8 @@ export const RouterHead = component$(() => {
 
       <meta property="og:title" content="The Wedding Of Bophan & SreyNeang Invitation" />
       <meta property="og:description" content="សូមគោរពអញ្ជើញ ឯកឧត្តម លោកជំទាវ អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា អញ្ជើញចូលរួមជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្តីជ័យមង្គលក្នុងពិធីសិរីមង្គលអាពាហ៍ពិពាហ៍របស់យើងខ្ញុំ" />
-      <meta property="og:image" content="https://bophan-srey-neang-wedding.vercel.app/savethedateimage.png" />
-      <meta property="og:url" content="https://bophan-srey-neang-wedding.vercel.app/" />
+      <meta property="og:image" content="https://bophan-srey-neang-invitation-8v3s.vercel.app/savethedateimage.png" />
+      <meta property="og:url" content="https://bophan-srey-neang-invitation-8v3s.vercel.app/" />
       <meta property="og:type" content="website" />
 
 
