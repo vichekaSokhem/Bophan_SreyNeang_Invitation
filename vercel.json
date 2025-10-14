@@ -1,0 +1,11 @@
+{
+  "buildCommand": "npm run build.static",
+  "outputDirectory": "dist",
+  "framework": "qwik",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

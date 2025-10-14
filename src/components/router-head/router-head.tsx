@@ -14,7 +14,14 @@ export const RouterHead = component$(() => {
 
       <link rel="canonical" href={loc.url.href} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link class="cover-icon" rel="icon" type="image/svg+xml" href="/favicon.png" />
+
+      <meta property="og:title" content="The Wedding Of Bophan & SreyNeang Invitation" />
+      <meta property="og:description" content="សូមគោរពអញ្ជើញ ឯកឧត្តម លោកជំទាវ អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា អញ្ជើញចូលរួមជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្តីជ័យមង្គលក្នុងពិធីសិរីមង្គលអាពាហ៍ពិពាហ៍របស់យើងខ្ញុំ" />
+      <meta property="og:image" content="https://bophan-srey-neang-wedding.vercel.app/savethedateimage.png" />
+      <meta property="og:url" content="https://bophan-srey-neang-wedding.vercel.app/" />
+      <meta property="og:type" content="website" />
+
 
       {head.meta.map((m) => (
         <meta key={m.key} {...m} />
