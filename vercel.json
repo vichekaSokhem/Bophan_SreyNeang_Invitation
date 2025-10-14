@@ -1,7 +1,7 @@
 {
   "buildCommand": "npm run build.static",
   "outputDirectory": "dist",
-  "framework": "qwik",
+  "framework": "vite",
   "rewrites": [
     {
       "source": "/(.*)",
