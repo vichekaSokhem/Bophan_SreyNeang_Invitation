@@ -174,7 +174,7 @@ export default component$(() => {
                   src={image2}
                   alt="Img 2"
                   class="w-40 h-20 rounded shadow-md animate-fade-up animate-duration-1000 animate-delay-300"
-                  onClick$={() => (popupState.selectedImage = image1)}
+                  onClick$={() => (popupState.selectedImage = image2)}
                 />
               </div>
               <div class="grid grid-cols-1 gap-2">
@@ -182,7 +182,7 @@ export default component$(() => {
                   src={image10}
                   alt="Img 1"
                   class="w-100 h-auto rounded shadow-md"
-                  onClick$={() => (popupState.selectedImage = image1)}
+                  onClick$={() => (popupState.selectedImage = image10)}
                 />
               </div>
               <div class="grid grid-cols-3 gap-2">
@@ -190,16 +190,19 @@ export default component$(() => {
                   src={image3}
                   alt="Img 3"
                   class="w-60 h-30 rounded shadow-md"
+                  onClick$={() => (popupState.selectedImage = image3)}
                 />
                 <img
                   src={image5}
                   alt="Img 5"
                   class="w-60 h-30 rounded shadow-md"
+                  onClick$={() => (popupState.selectedImage = image5)}
                 />
                 <img
                   src={image4}
                   alt="Img 4"
                   class="w-60 h-30 rounded shadow-md"
+                  onClick$={() => (popupState.selectedImage = image4)}
                 />
               </div>
               <div class="grid grid-cols-1 gap-2">
@@ -207,6 +210,7 @@ export default component$(() => {
                   src={image9}
                   alt="Img 1"
                   class="w-100 h-auto rounded shadow-md"
+                  onClick$={() => (popupState.selectedImage = image9)}
                 />
               </div>
               <div class="grid grid-cols-3 gap-2">
@@ -214,16 +218,19 @@ export default component$(() => {
                   src={image6}
                   alt="Img 3"
                   class="w-60 h-30 rounded shadow-md"
+                  onClick$={() => (popupState.selectedImage = image6)}
                 />
                 <img
                   src={image7}
                   alt="Img 5"
                   class="w-60 h-30 rounded shadow-md"
+                  onClick$={() => (popupState.selectedImage = image7)}
                 />
                 <img
                   src={image8}
                   alt="Img 4"
                   class="w-60 h-30 rounded shadow-md"
+                  onClick$={() => (popupState.selectedImage = image8)}
                 />
               </div>
             </div>
@@ -325,7 +332,7 @@ export default component$(() => {
           <div class="flex justify-center gap-x-8 items-center py-2">
             {/* Calender Section */}
             <a
-              href="#date"
+              href="#date" preventdefault:click={false}
               class="w-13 h-13 bg-yellow-800/80 text-white rounded-xl flex items-center justify-center shadow-lg transition-colors"
             >
               <svg
@@ -343,7 +350,7 @@ export default component$(() => {
 
             {/* Location Section */}
             <a
-              href="#location"
+              href="#location" preventdefault:click={false}
               class="w-13 h-13 bg-yellow-800/80 text-white rounded-xl flex items-center justify-center shadow-lg transition-colors"
             >
               <svg
@@ -362,7 +369,7 @@ export default component$(() => {
 
             {/* Image Section */}
             <a
-              href="#images"
+              href="#images" preventdefault:click={false}
               class="w-13 h-13 bg-yellow-800/80 text-white rounded-xl flex items-center justify-center shadow-lg transition-colors"
             >
               <svg
@@ -380,7 +387,7 @@ export default component$(() => {
 
             {/* Comment Section */}
             <a
-              href="#wish"
+              href="#wish" preventdefault:click={false}
               class="w-13 h-13 bg-yellow-800/80 text-white rounded-xl flex items-center justify-center shadow-lg transition-colors"
             >
               <svg
