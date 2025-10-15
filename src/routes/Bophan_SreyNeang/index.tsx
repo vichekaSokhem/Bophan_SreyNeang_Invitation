@@ -56,6 +56,15 @@ export default component$(() => {
   });
     
   });
+  export const ScrollToHash = component$(() => {
+  useVisibleTask$(() => {
+    if (window.location.hash) {
+      const el = document.querySelector(window.location.hash);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+  return null;
+});
   // Store for comments
   const state = useStore({
     comments: [] as {
@@ -328,7 +337,9 @@ export default component$(() => {
         </div>
 
         {/* 📌 Bottom Navbar (inside background) */}
+        
         <div class="absolute bottom-0 left-2 w-full shadow-lg z-20">
+          <ScrollToHash />
           <div class="flex justify-center gap-x-8 items-center py-2">
             {/* Calender Section */}
             <a
