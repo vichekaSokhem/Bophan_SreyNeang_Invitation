@@ -56,7 +56,7 @@ export default component$(() => {
   });
     
   });
-  export const ScrollToHash = component$(() => {
+  const ScrollToHash = component$(() => {
   useVisibleTask$(() => {
     if (window.location.hash) {
       const el = document.querySelector(window.location.hash);
