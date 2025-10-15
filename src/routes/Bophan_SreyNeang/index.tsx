@@ -56,15 +56,6 @@ export default component$(() => {
   });
     
   });
-  const ScrollToHash = component$(() => {
-  useVisibleTask$(() => {
-    if (window.location.hash) {
-      const el = document.querySelector(window.location.hash);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-  return null;
-});
   // Store for comments
   const state = useStore({
     comments: [] as {
@@ -339,11 +330,13 @@ export default component$(() => {
         {/* 📌 Bottom Navbar (inside background) */}
         
         <div class="absolute bottom-0 left-2 w-full shadow-lg z-20">
-          <ScrollToHash />
           <div class="flex justify-center gap-x-8 items-center py-2">
             {/* Calender Section */}
             <a
-              href="#date" preventdefault:click={false}
+              href="#date" preventdefault:click={false} onClick$={() => {
+              const el = document.querySelector('#date');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
               class="w-13 h-13 bg-yellow-800/80 text-white rounded-xl flex items-center justify-center shadow-lg transition-colors"
             >
               <svg
@@ -361,7 +354,10 @@ export default component$(() => {
 
             {/* Location Section */}
             <a
-              href="#location" preventdefault:click={false}
+              href="#location" preventdefault:click={false} onClick$={() => {
+              const el = document.querySelector('#location');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
               class="w-13 h-13 bg-yellow-800/80 text-white rounded-xl flex items-center justify-center shadow-lg transition-colors"
             >
               <svg
@@ -380,7 +376,10 @@ export default component$(() => {
 
             {/* Image Section */}
             <a
-              href="#images" preventdefault:click={false}
+              href="#images" preventdefault:click={false} onClick$={() => {
+              const el = document.querySelector('#images');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
               class="w-13 h-13 bg-yellow-800/80 text-white rounded-xl flex items-center justify-center shadow-lg transition-colors"
             >
               <svg
@@ -398,7 +397,10 @@ export default component$(() => {
 
             {/* Comment Section */}
             <a
-              href="#wish" preventdefault:click={false}
+              href="#wish" preventdefault:click={false} onClick$={() => {
+              const el = document.querySelector('#wish');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
               class="w-13 h-13 bg-yellow-800/80 text-white rounded-xl flex items-center justify-center shadow-lg transition-colors"
             >
               <svg
