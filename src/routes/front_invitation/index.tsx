@@ -17,7 +17,7 @@ export default component$(() => {
           console.log("Video ended, navigating...");
           nav("/Bophan_SreyNeang"); // ✅ Correct way
         }}
-        class="absolute w-full h-full object-contain outline-none"
+        class="absolute inset-0 w-full h-full object-cover"
       />
     </div>
   );

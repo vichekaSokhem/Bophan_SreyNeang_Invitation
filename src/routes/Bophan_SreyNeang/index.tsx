@@ -124,8 +124,8 @@ export default component$(() => {
   });
 
   return (
-    <div class=" w-full h-screen overflow-hidden">
-      <div class="relative w-full h-full clip-video shadow-lg overflow-y-hidden min-h-screen">
+    <div class=" w-full h-full overflow-hidden">
+      <div class="relative w-full h-full clip-video shadow-lg overflow-y-hidden m-h-screen">
         {/* 🎥 Background Video */}
         <video
           src={video3}
@@ -133,7 +133,7 @@ export default component$(() => {
           muted
           loop
           playsInline
-          class="fixed top-0 absolute w-full h-full object-contain outline-none"
+          class="fixed top-0 absolute inset-0 w-full h-full object-cover"
         />
 
         {/* 🧾 Scrollable Content Area */}
@@ -329,8 +329,8 @@ export default component$(() => {
 
         {/* 📌 Bottom Navbar (inside background) */}
         
-        <div class="absolute bottom-0 left-2 w-full shadow-lg z-20">
-          <div class="flex justify-center gap-x-8 items-center py-2">
+        <div class="fixed bottom-0 left-2 w-full shadow-lg z-20">
+          <div class="flex justify-around md:justify-center md:gap-x-10 items-center py-4">
             {/* Calender Section */}
             <a
               href="#date" preventdefault:click={false} onClick$={() => {

@@ -16,7 +16,7 @@ export default component$(() => {
           muted
           loop
           playsInline
-          class="absolute w-full h-full object-contain outline-none"
+          class="absolute inset-0 w-full h-full object-cover"
         />
         <img
           src={coverName}
