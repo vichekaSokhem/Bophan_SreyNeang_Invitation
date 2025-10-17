@@ -2,34 +2,34 @@ import { component$, useStore, useVisibleTask$, $ } from "@builder.io/qwik";
 import { animate } from "@motionone/dom";
 import { supabase } from "~/supabase/client";
 
-// Use public URLs instead of imports for better Vercel compatibility
-const video3 = "/video3.mp4";
-const detail1 = "/detail1.png";
-const agenda = "/agenda.png";
-const agendaTittle = "/agendaTittle.png";
-const ThanksLetter = "/ThanksLetter.png";
-const Location = "/Location.png";
-const imageLabel = "/imageLabel.png";
-const image1 = "/image1.png";
-const image2 = "/image2.png";
-const image3 = "/image3.png";
-const image4 = "/image4.png";
-const image5 = "/image5.png";
-const image6 = "/image6.png";
-const image7 = "/image7.png";
-const image8 = "/image8.png";
-const image9 = "/image9.png";
-const image10 = "/image10.png";
-const LocationLabel = "/LocationLabel.png";
-const wish = "/wish.png";
-const btnSendWish = "/btnsendwish.png";
-const btnsavethedate = "/btnsavethedate.png";
-const savethedateimage = "/savethedateimage.png";
-
-
 export default component$(() => {
+  const images = [
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-18_00-20-52.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-18_00-18-36.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-18_00-18-20.jpg", 
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-17_23-25-06.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-17_23-26-07.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-16_22-05-46.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-18_00-28-46.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-16_21-55-04.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-16_22-01-27.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-16_21-54-53.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-17_23-28-09.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-16_22-07-52.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-18_00-26-02.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-18_00-20-20.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-18_00-20-23.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-16_22-18-30.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-16_21-55-25.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-16_21-55-37.jpg",
+  "https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/photo_2025-10-15_21-25-07.jpg",
+
+];
+
   const popupState = useStore({
   selectedImage: null as string | null,
+  isOpen: false,
+  currentIndex: 0,
 });
   useVisibleTask$(() => {
     animate(
@@ -47,7 +47,7 @@ export default component$(() => {
       img,
       { y: [100, -10, 0], opacity: [0, 1, 1] }, // slide up + fade in
       {
-        duration: 1.8,
+        duration: 1.3,
         easing: "ease-in",
         delay: index * 0.5, // stagger effect
         repeat: 0,
@@ -128,7 +128,7 @@ export default component$(() => {
       <div class="relative w-full h-full clip-video shadow-lg overflow-y-hidden m-h-screen">
         {/* 🎥 Background Video */}
         <video
-          src={video3}
+          src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/IMG_0447.MP4"
           autoplay
           muted
           loop
@@ -137,114 +137,122 @@ export default component$(() => {
         />
 
         {/* 🧾 Scrollable Content Area */}
-        <div class="relative z-10 w-full h-full overflow-y-auto pt-[50px] pb-[100px] left-2">
-          <div id="date" class="min-h-screen flex flex-col items-center justify-start gap-3 py-5 px-4">
-            <img src={detail1} alt="Image 1" class="w-90 max-w-md " />
+        <div class="relative z-10 w-full h-full overflow-y-auto pt-[50px] pb-[100px] ">
+          <div id="date" class="min-h-screen flex flex-col items-center justify-center gap-3 py-5">
+            <img loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/Detail.png" alt="Image 1" class="px-10" />
             <img
               id="zoomBox"
-              src={btnsavethedate}
+              loading="lazy"
+              src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/btnsavethedate.png"
               alt="Image 1"
-              class=" w-30 pb-6 max-w-md cursor-pointer"
+              class=" w-[140px] mb-5 cursor-pointer"
+              onClick$={() => {
+              const url =
+                "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+                "&text=Bophan+SreyNeang+Wedding+Day" +
+                "&dates=20251203/20251204" +
+                "&details=We+joyfully+invite+you+to+celebrate+our+wedding+day!+Join+us+for+ceremony,+dinner,+and+dancing." +
+                "&location=Kompong+Thom, +Cambodia";
+              window.open(url, "_blank");
+            }}
             />
-            <img id="popup" src={savethedateimage} alt="Image 1" class="w-96 max-w-md " />
-            <img id="popup" src={agendaTittle} alt="Image 1" class="w-70 max-w-md " />
-            <img id="popup" src={agenda} alt="Image 1" class="w-70 max-w-md " />
+            <img id="popup" loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/image1.jpg" alt="Image 1" class="w-full " />
+            <img id="popup" loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/event.png" alt="Image 1" class="w-75 h-full" />
+            <img id="popup" loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/Frame%201000005223%20(1).png" alt="Image 1" class="w-75 h-full " />
             <br id="location"/>
-            <img
+            <a href="https://maps.app.goo.gl/xkFJD17yLJLT5tP16?g_st=ipc">
+              <img
               id="ZoomBox"
-              src={LocationLabel}
+              loading="lazy"
+              src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/location.png"
               alt="Image 1"
-              class=" w-30 max-w-md cursor-pointer"
+              class=" w-75 h-full object-contain cursor-pointer"
             />
-            <img id="popup" src={Location} alt="Image 1" class="w-70 max-w-md " />
-            
-            <img id="popup" src={ThanksLetter} alt="Image 1" class="w-70 max-w-md " />
-            <br id="images" />
-            <img  id="popup" src={imageLabel} alt="Image 1" class="w-70 max-w-md " />
+            </a>
+            <a href="https://maps.app.goo.gl/xkFJD17yLJLT5tP16?g_st=ipc">
+              <img id="popup" loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/qr_download%20(1).png" alt="Image 1" class="w-75 h-full " />
+            </a>
 
-            <div class="w-70 flex flex-col gap-2">
-              <div class="grid grid-cols-2 gap-2" >
-                <img
-                  src={image1}
-                  alt="Img 1"
-                  class="w-40 h-20 rounded shadow-md animate-fade-up animate-duration-1000 animate-delay-300" 
-                  onClick$={() => (popupState.selectedImage = image1)}
-                />
-                <img
-                  src={image2}
-                  alt="Img 2"
-                  class="w-40 h-20 rounded shadow-md animate-fade-up animate-duration-1000 animate-delay-300"
-                  onClick$={() => (popupState.selectedImage = image2)}
-                />
-              </div>
-              <div class="grid grid-cols-1 gap-2">
-                <img
-                  src={image10}
-                  alt="Img 1"
-                  class="w-100 h-auto rounded shadow-md"
-                  onClick$={() => (popupState.selectedImage = image10)}
-                />
-              </div>
-              <div class="grid grid-cols-3 gap-2">
-                <img
-                  src={image3}
-                  alt="Img 3"
-                  class="w-60 h-30 rounded shadow-md"
-                  onClick$={() => (popupState.selectedImage = image3)}
-                />
-                <img
-                  src={image5}
-                  alt="Img 5"
-                  class="w-60 h-30 rounded shadow-md"
-                  onClick$={() => (popupState.selectedImage = image5)}
-                />
-                <img
-                  src={image4}
-                  alt="Img 4"
-                  class="w-60 h-30 rounded shadow-md"
-                  onClick$={() => (popupState.selectedImage = image4)}
-                />
-              </div>
-              <div class="grid grid-cols-1 gap-2">
-                <img
-                  src={image9}
-                  alt="Img 1"
-                  class="w-100 h-auto rounded shadow-md"
-                  onClick$={() => (popupState.selectedImage = image9)}
-                />
-              </div>
-              <div class="grid grid-cols-3 gap-2">
-                <img
-                  src={image6}
-                  alt="Img 3"
-                  class="w-60 h-30 rounded shadow-md"
-                  onClick$={() => (popupState.selectedImage = image6)}
-                />
-                <img
-                  src={image7}
-                  alt="Img 5"
-                  class="w-60 h-30 rounded shadow-md"
-                  onClick$={() => (popupState.selectedImage = image7)}
-                />
-                <img
-                  src={image8}
-                  alt="Img 4"
-                  class="w-60 h-30 rounded shadow-md"
-                  onClick$={() => (popupState.selectedImage = image8)}
-                />
-              </div>
-            </div>
-            <img id="wish" src={wish} alt="Wish" class="w-70 max-w-md " />
+            <img id="popup" loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/Thanks%20Letter.png" alt="Image 1" class="w-75 h-full   " />
+            <br id="images" />
+            <img  id="popup" loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/gallery.png" alt="Image 1" class="w-75 h-full " />
+
+            <div id="images"  class="grid grid-cols-2 sm:grid-cols-2 gap-2 " >
+  {images.map((url, index) => {
+    const isFullWidth = index % 3 === 0; // every 3rd image (0, 3, 6, 9...) full width
+
+    return (
+      <img
+        key={index}
+        src={url}
+        alt={`Image ${index + 1}`}
+        loading="lazy"
+        class={{
+          // shared styles
+          "rounded shadow-md cursor-pointer hover:opacity-80 transition w-full h-auto object-cover": true,
+          // make it full width across both columns
+          "col-span-2": isFullWidth,
+        }}
+        onClick$={() => {
+          popupState.currentIndex = index;
+          popupState.isOpen = true;
+        }}
+      />
+    );
+  })}
+</div>
+
+            {popupState.isOpen && (
+  <div class="fixed inset-0 bg-black/90 flex items-center justify-center z-50">
+    <button
+      class="absolute top-4 right-4 bg-white text-black px-3 py-1 rounded"
+      onClick$={() => (popupState.isOpen = false)}
+    >
+      ✕
+    </button>
+
+    <button
+      class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-5xl"
+      onClick$={() =>
+        (popupState.currentIndex =
+          (popupState.currentIndex - 1 + images.length) % images.length)
+      }
+    >
+      ‹
+    </button>
+
+    <img
+      src={images[popupState.currentIndex]}
+      alt={`Image ${popupState.currentIndex + 1}`}
+      class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-lg transition-transform duration-300"
+    />
+
+    <button
+      class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-5xl"
+      onClick$={() =>
+        (popupState.currentIndex =
+          (popupState.currentIndex + 1) % images.length)
+      }
+    >
+      ›
+    </button>
+  </div>
+)}
+
+
+            <img id="wish" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/wish%20(1).png" alt="Wish" class="w-70  " />
             {/* Comment Form */}
             <form
               preventdefault:submit
               onSubmit$={handleSubmit}
-              class="space-y-3 w-70 max-w-md"
+              class="space-y-3 w-75 "
             >
               <div class="bg-white rounded-lg p-2">
-                <label class="block text-yellow-700 text-sm">Name</label>
+                <label for="fname" class="block text-yellow-700 text-sm">Name</label>
                 <input
                   type="text"
+                  id="fname"
+                  name="fname"
                   value={state.name}
                   onInput$={$(
                     (e) => (state.name = (e.target as HTMLInputElement).value)
@@ -253,9 +261,11 @@ export default component$(() => {
                 />
               </div>
               <div class="bg-white rounded-lg p-2">
-                <label class="block text-yellow-700 text-sm">Comment</label>
+                <label for="fcomment" class="block text-yellow-700 text-sm">Comment</label>
                 <textarea
                   rows={2}
+                  id="fcomment"
+                  name="fcomment"
                   value={state.text}
                   onInput$={$(
                     (e) =>
@@ -265,12 +275,12 @@ export default component$(() => {
                 />
               </div>
               <button type="submit" class="flex justify-center w-full">
-                <img id="zoomBox" src={btnSendWish} class="w-30 max-w-md cursor-pointer" />
+                <img id="zoomBox" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/btnsendwish.png" class="w-30 max-w-md cursor-pointer" />
               </button>
             </form>
 
             {/* Comments List */}
-            <div class="w-70 max-w-md mt-4 space-y-3">
+            <div class="w-75  mt-4 space-y-3">
               {state.loading && (
                 <div class="bg-white/80 p-3 rounded-lg shadow-md text-center">
                   <p class="text-yellow-800">Loading comments...</p>
@@ -329,8 +339,8 @@ export default component$(() => {
 
         {/* 📌 Bottom Navbar (inside background) */}
         
-        <div class="fixed bottom-0 left-2 w-full shadow-lg z-20">
-          <div class="flex justify-around md:justify-center md:gap-x-10 items-center py-4">
+        <div class=" items-center fixed bottom-0 w-full shadow-lg z-20">
+          <div class="flex justify-center md:justify-center gap-x-8 items-center py-4">
             {/* Calender Section */}
             <a
               href="#date" preventdefault:click={false} onClick$={() => {
