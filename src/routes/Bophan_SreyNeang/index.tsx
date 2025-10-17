@@ -158,7 +158,7 @@ export default component$(() => {
             />
             <img id="popup" loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/image1.jpg" alt="Image 1" class="w-full " />
             <img id="popup" loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/event.png" alt="Image 1" class="w-75 h-full" />
-            <img id="popup" loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/Frame%201000005223%20(1).png" alt="Image 1" class="w-75 h-full " />
+            <img id="popup" loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/Frame%201000005223%20(1).png" alt="Image 1" class="px-20 " />
             <br id="location"/>
             <a href="https://maps.app.goo.gl/xkFJD17yLJLT5tP16?g_st=ipc">
               <img
@@ -170,10 +170,10 @@ export default component$(() => {
             />
             </a>
             <a href="https://maps.app.goo.gl/xkFJD17yLJLT5tP16?g_st=ipc">
-              <img id="popup" loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/qr_download%20(1).png" alt="Image 1" class="w-75 h-full " />
+              <img id="popup" loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/qr_download%20(1).png" alt="Image 1" class="px-20 " />
             </a>
 
-            <img id="popup" loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/Thanks%20Letter.png" alt="Image 1" class="w-75 h-full   " />
+            <img id="popup" loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/Thanks%20Letter.png" alt="Image 1" class="px-20   " />
             <br id="images" />
             <img  id="popup" loading="lazy" src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/gallery.png" alt="Image 1" class="w-75 h-full " />
 
@@ -245,9 +245,9 @@ export default component$(() => {
             <form
               preventdefault:submit
               onSubmit$={handleSubmit}
-              class="space-y-3 w-75 "
+              class="w-full px-20 space-y-3"
             >
-              <div class="bg-white rounded-lg p-2">
+              <div class="w-full bg-white rounded-lg p-2">
                 <label for="fname" class="block text-yellow-700 text-sm">Name</label>
                 <input
                   type="text"
@@ -257,10 +257,10 @@ export default component$(() => {
                   onInput$={$(
                     (e) => (state.name = (e.target as HTMLInputElement).value)
                   )}
-                  class="w-full focus:outline-none bg-transparent"
+                  class="focus:outline-none bg-transparent"
                 />
               </div>
-              <div class="bg-white rounded-lg p-2">
+              <div class="w-full bg-white rounded-lg p-2">
                 <label for="fcomment" class="block text-yellow-700 text-sm">Comment</label>
                 <textarea
                   rows={2}
@@ -271,7 +271,7 @@ export default component$(() => {
                     (e) =>
                       (state.text = (e.target as HTMLTextAreaElement).value)
                   )}
-                  class="w-full focus:outline-none bg-transparent"
+                  class=" focus:outline-none bg-transparent"
                 />
               </div>
               <button type="submit" class="flex justify-center w-full">
@@ -280,7 +280,7 @@ export default component$(() => {
             </form>
 
             {/* Comments List */}
-            <div class="w-75  mt-4 space-y-3">
+            <div class="w-full px-20  mt-4 space-y-3">
               {state.loading && (
                 <div class="bg-white/80 p-3 rounded-lg shadow-md text-center">
                   <p class="text-yellow-800">Loading comments...</p>
