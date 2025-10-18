@@ -125,7 +125,7 @@ export default component$(() => {
 
   return (
     <div class=" w-full h-full overflow-hidden">
-      <div class="relative w-full h-full clip-video shadow-lg overflow-y-hidden m-h-screen">
+      <div class="relative w-full h-full  clip-video shadow-lg overflow-y-hidden m-h-screen">
         {/* 🎥 Background Video */}
         <video
           src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/IMG_0447.MP4"

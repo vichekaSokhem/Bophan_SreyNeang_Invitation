@@ -8,7 +8,7 @@ export default component$(() => {
   return (
     <div class="w-full h-full max-w-full max-h-full shadow-lg overflow-hidden h-screen">
       <video
-        src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/IMG_0449.MOV"
+        src="https://smghbdljkdvluvyzqfwr.supabase.co/storage/v1/object/public/Images/Bride&Groom/videos/IMG_0450.MOV"
         autoplay
         muted
         playsInline
